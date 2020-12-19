@@ -1,0 +1,8 @@
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\bin\ExportDebug\AndroidController.dll
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\bin\ExportDebug\AndroidController.pdb
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.csprojAssemblyReference.cache
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.AssemblyInfoInputs.cache
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.AssemblyInfo.cs
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.csproj.CoreCompileInputs.cache
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.dll
+C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportDebug\AndroidController.pdb

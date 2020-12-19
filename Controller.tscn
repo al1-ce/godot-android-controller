@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://CodersCrux.tres" type="DynamicFont" id=1]
+[ext_resource path="res://UIToggle.cs" type="Script" id=2]
+[ext_resource path="res://BtnStatusColorRed.tres" type="StyleBox" id=3]
+
+[node name="Controller" type="Control"]
+margin_right = 600.0
+margin_bottom = 800.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnEditIP" type="Button" parent="."]
+margin_left = 37.8056
+margin_top = 17.9797
+margin_right = 276.806
+margin_bottom = 68.9797
+custom_fonts/font = ExtResource( 1 )
+text = "Edit IP"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnConnect" type="Button" parent="."]
+margin_left = 322.548
+margin_top = 18.0
+margin_right = 561.548
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+text = "Connect"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PnlConnect" type="Panel" parent="."]
+visible = false
+margin_right = 598.0
+margin_bottom = 88.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditIP" type="LineEdit" parent="PnlConnect"]
+margin_left = 17.0
+margin_top = 25.0
+margin_right = 407.0
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 1 )
+text = "192.168.31.130"
+caret_blink = true
+
+[node name="BtnAccept" type="Button" parent="PnlConnect"]
+margin_left = 428.434
+margin_top = 18.0
+margin_right = 579.434
+margin_bottom = 69.0
+custom_fonts/font = ExtResource( 1 )
+text = "Confirm"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PnlController" type="Panel" parent="."]
+visible = false
+margin_right = 598.0
+margin_bottom = 203.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRefresh" type="Button" parent="PnlController"]
+margin_left = 224.419
+margin_top = 17.9797
+margin_right = 375.419
+margin_bottom = 68.9797
+custom_fonts/font = ExtResource( 1 )
+text = "Refresh"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnToggle" type="Button" parent="PnlController"]
+margin_left = 37.8056
+margin_top = 109.406
+margin_right = 557.806
+margin_bottom = 160.406
+custom_fonts/font = ExtResource( 1 )
+text = "Turn on"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnStatus" type="Button" parent="PnlController"]
+margin_left = 407.0
+margin_top = 17.9797
+margin_right = 558.0
+margin_bottom = 68.9797
+custom_styles/normal = ExtResource( 3 )
+custom_fonts/font = ExtResource( 1 )
+shortcut_in_tooltip = false
+button_mask = 0
+text = "Status"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnHide" type="Button" parent="PnlController"]
+margin_left = 37.8056
+margin_top = 17.9797
+margin_right = 188.806
+margin_bottom = 68.9797
+custom_fonts/font = ExtResource( 1 )
+text = "Hide"
+__meta__ = {
+"_edit_use_anchors_": false
+}
