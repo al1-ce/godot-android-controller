@@ -10,3 +10,7 @@ one_shot = true
 
 [node name="Control" type="Timer" parent="."]
 one_shot = true
+
+[node name="Await" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true

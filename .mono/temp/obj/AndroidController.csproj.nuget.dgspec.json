@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\AndroidController.csproj": {}
+    "C:\\Users\\alice\\git\\android_controller\\AndroidController.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\AndroidController.csproj": {
+    "C:\\Users\\alice\\git\\android_controller\\AndroidController.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\AndroidController.csproj",
+        "projectUniqueName": "C:\\Users\\alice\\git\\android_controller\\AndroidController.csproj",
         "projectName": "AndroidController",
-        "projectPath": "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\AndroidController.csproj",
+        "projectPath": "C:\\Users\\alice\\git\\android_controller\\AndroidController.csproj",
         "packagesPath": "C:\\Users\\alice\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\.mono\\temp\\obj\\",
+        "outputPath": "C:\\Users\\alice\\git\\android_controller\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\alice\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,7 +37,7 @@
       "frameworks": {
         "net472": {
           "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

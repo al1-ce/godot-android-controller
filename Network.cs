@@ -18,6 +18,7 @@ public class Network : Node {
 
     private Timer timerCheckout;
     private Timer timerControl;
+    private Timer timerAwait;
 
     public bool isConnected = false;
     private bool wasConnected = false;
@@ -27,7 +28,15 @@ public class Network : Node {
     public enum DATA_TYPE {
         CHECKOUT = 0,
         SETLIGHT = 1,
+        SETCOLOR = 2,
+        SETMODE = 3,
         ENDOFPACKET = 9
+    }
+
+    public enum LIGHT_MODE {
+        NONE = 0,
+        RAINBOW = 1,
+        FLASH = 2
     }
 
     public override void _Ready() {
@@ -36,6 +45,7 @@ public class Network : Node {
         timerCheckout.Connect("timeout", this, nameof(CheckoutFail));
         timerControl = GetNode<Timer>("Control");
         timerControl.Connect("timeout", this, nameof(SendControl));
+        timerAwait = GetNode<Timer>("Await");
     }
 
     public override void _Process(float delta) {
@@ -87,6 +97,8 @@ public class Network : Node {
     }
 
     public void SendData(DATA_TYPE flag, String data) {
+        //if (timerAwait.TimeLeft != 0) return;
+        //timerAwait.Start(0.1f);
         timerCheckout.Start(1);
 
         String pool = GD.Str(flag.ToString("d"), data, DATA_TYPE.ENDOFPACKET.ToString("d"));

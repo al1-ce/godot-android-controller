@@ -1,33 +1,59 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://CodersCrux.tres" type="DynamicFont" id=1]
 [ext_resource path="res://UIToggle.cs" type="Script" id=2]
 [ext_resource path="res://BtnStatusColorRed.tres" type="StyleBox" id=3]
 
+[sub_resource type="Theme" id=1]
+default_font = ExtResource( 1 )
+
 [node name="Controller" type="Control"]
-margin_right = 600.0
-margin_bottom = 800.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -625.0
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnEditIP" type="Button" parent="."]
-margin_left = 37.8056
-margin_top = 17.9797
-margin_right = 276.806
-margin_bottom = 68.9797
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 54.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnEditIP" type="Button" parent="HBoxContainer"]
+margin_right = 197.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Edit IP"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnConnect" type="Button" parent="."]
-margin_left = 322.548
-margin_top = 18.0
-margin_right = 561.548
-margin_bottom = 69.0
+[node name="BtnRemove" type="Button" parent="HBoxContainer"]
+margin_left = 201.0
+margin_right = 398.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+disabled = true
+text = "Remove"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnConnect" type="Button" parent="HBoxContainer"]
+margin_left = 402.0
+margin_right = 600.0
+margin_bottom = 54.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Connect"
 __meta__ = {
@@ -36,26 +62,32 @@ __meta__ = {
 
 [node name="PnlConnect" type="Panel" parent="."]
 visible = false
-margin_right = 598.0
-margin_bottom = 88.0
+anchor_right = 1.0
+margin_bottom = 175.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EditIP" type="LineEdit" parent="PnlConnect"]
-margin_left = 17.0
-margin_top = 25.0
-margin_right = 407.0
-margin_bottom = 63.0
+[node name="HBoxContainer" type="HBoxContainer" parent="PnlConnect"]
+anchor_right = 1.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EditIP" type="LineEdit" parent="PnlConnect/HBoxContainer"]
+margin_right = 458.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 1 )
 text = "192.168.31.130"
+align = 1
 caret_blink = true
 
-[node name="BtnAccept" type="Button" parent="PnlConnect"]
-margin_left = 428.434
-margin_top = 18.0
-margin_right = 579.434
-margin_bottom = 69.0
+[node name="BtnAccept" type="Button" parent="PnlConnect/HBoxContainer"]
+margin_left = 462.0
+margin_right = 600.0
+margin_bottom = 60.0
 custom_fonts/font = ExtResource( 1 )
 text = "Confirm"
 __meta__ = {
@@ -64,39 +96,37 @@ __meta__ = {
 
 [node name="PnlController" type="Panel" parent="."]
 visible = false
-margin_right = 598.0
-margin_bottom = 203.0
+anchor_right = 1.0
+margin_bottom = 175.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnRefresh" type="Button" parent="PnlController"]
-margin_left = 224.419
-margin_top = 17.9797
-margin_right = 375.419
-margin_bottom = 68.9797
+[node name="GridContainer" type="GridContainer" parent="PnlController"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BtnRefresh" type="Button" parent="PnlController/GridContainer"]
+margin_right = 197.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Refresh"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnToggle" type="Button" parent="PnlController"]
-margin_left = 37.8056
-margin_top = 109.406
-margin_right = 557.806
-margin_bottom = 160.406
-custom_fonts/font = ExtResource( 1 )
-text = "Turn on"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BtnStatus" type="Button" parent="PnlController"]
-margin_left = 407.0
-margin_top = 17.9797
-margin_right = 558.0
-margin_bottom = 68.9797
+[node name="BtnStatus" type="Button" parent="PnlController/GridContainer"]
+margin_left = 201.0
+margin_right = 398.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/normal = ExtResource( 3 )
 custom_fonts/font = ExtResource( 1 )
 shortcut_in_tooltip = false
@@ -106,13 +136,43 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BtnHide" type="Button" parent="PnlController"]
-margin_left = 37.8056
-margin_top = 17.9797
-margin_right = 188.806
-margin_bottom = 68.9797
+[node name="BtnHide" type="Button" parent="PnlController/GridContainer"]
+margin_left = 402.0
+margin_right = 599.0
+margin_bottom = 85.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = ExtResource( 1 )
 text = "Hide"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BtnToggle" type="Button" parent="PnlController/GridContainer"]
+margin_top = 89.0
+margin_right = 197.0
+margin_bottom = 174.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 1 )
+text = "Turn on"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="PnlController/GridContainer"]
+margin_left = 201.0
+margin_top = 89.0
+margin_right = 398.0
+margin_bottom = 174.0
+
+[node name="MenuButton" type="MenuButton" parent="PnlController/GridContainer"]
+margin_left = 402.0
+margin_top = 89.0
+margin_right = 599.0
+margin_bottom = 174.0
+theme = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "Mode"
+flat = false
+items = [ "", null, 0, false, false, 0, 0, null, "", true, "Rainbow", null, 0, false, false, 1, 0, null, "", false, "", null, 0, false, false, 2, 0, null, "", true, "Flash", null, 0, false, false, 3, 0, null, "", false, "", null, 0, false, false, 4, 0, null, "", true ]

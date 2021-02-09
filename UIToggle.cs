@@ -20,6 +20,12 @@ public class UIToggle : Control {
     private Button btnToggle;
     private Button btnStatus;
     private Button btnHide;
+    private ColorPickerButton btnColor;
+
+    private Color lightCol;
+
+    private MenuButton menuButton;
+    private PopupMenu menuModeSelect;
     
     public bool lightState = false;
     public bool netState = false;
@@ -33,28 +39,36 @@ public class UIToggle : Control {
         this.AddChild(network);
         network.uitoggle = this;
 
-        btnEditIP = GetNode<Button>("BtnEditIP");
-        btnConnect = GetNode<Button>("BtnConnect");
+        btnEditIP = GetNode<Button>("HBoxContainer/BtnEditIP");
+        btnConnect = GetNode<Button>("HBoxContainer/BtnConnect");
 
         btnEditIP.Connect("pressed", this, nameof(ShowEditIP));
         btnConnect.Connect("pressed", this, nameof(ConnectController));
         
         pnlConnect = GetNode<Panel>("PnlConnect");
-        editIP = GetNode<LineEdit>("PnlConnect/EditIP");
-        btnAccept = GetNode<Button>("PnlConnect/BtnAccept");
+        editIP = GetNode<LineEdit>("PnlConnect/HBoxContainer/EditIP");
+        btnAccept = GetNode<Button>("PnlConnect/HBoxContainer/BtnAccept");
         
         editIP.Text = "192.168.31.130";
         btnAccept.Connect("pressed", this, nameof(SetNewIP));
         
         pnlController = GetNode<Panel>("PnlController");
-        btnHide = GetNode<Button>("PnlController/BtnHide");
-        btnRefresh = GetNode<Button>("PnlController/BtnRefresh");
-        btnStatus = GetNode<Button>("PnlController/BtnStatus");
-        btnToggle = GetNode<Button>("PnlController/BtnToggle");
+        btnHide = GetNode<Button>("PnlController/GridContainer/BtnHide");
+        btnRefresh = GetNode<Button>("PnlController/GridContainer/BtnRefresh");
+        btnStatus = GetNode<Button>("PnlController/GridContainer/BtnStatus");
+        btnToggle = GetNode<Button>("PnlController/GridContainer/BtnToggle");
+        btnColor = GetNode<ColorPickerButton>("PnlController/GridContainer/ColorPickerButton");
+        menuButton = GetNode<MenuButton>("PnlController/GridContainer/MenuButton");
+
+        menuModeSelect = menuButton.GetPopup();
+
+        menuModeSelect.Connect("id_pressed", this, nameof(ModeChange));
         
         btnHide.Connect("pressed", this, nameof(HideController));
         btnRefresh.Connect("pressed", this, nameof(RefreshNetwork));
         btnToggle.Connect("pressed", this, nameof(ToggleLight));
+
+        lightCol = btnColor.Color;
     }
 
     public override void _Process(float delta) {
@@ -67,13 +81,35 @@ public class UIToggle : Control {
         if (netState) {
             btnRefresh.Disabled = true;
             btnToggle.Disabled = false;
+            btnColor.Disabled = false;
             btnStatus.Set("custom_styles/normal", colGreen);
             btnStatus.Set("custom_styles/hover", colGreen);
         } else {
             btnRefresh.Disabled = false;
             btnToggle.Disabled = true;
+            btnColor.Disabled = true;
             btnStatus.Set("custom_styles/normal", colRed);
             btnStatus.Set("custom_styles/hover", colRed);
+        }
+
+        if (netState && lightCol != btnColor.Color) {
+            lightCol = btnColor.Color;
+            network.SendData(Network.DATA_TYPE.SETCOLOR, GD.Str("0x", lightCol.ToHtml(false)));
+        }
+
+        lightCol = btnColor.Color;
+    }
+
+    public void ModeChange(int id) {
+        // 1 - rainbow
+        // 3 - flash
+        switch (id) {
+            case 1: 
+                network.SendData(Network.DATA_TYPE.SETMODE, Network.LIGHT_MODE.RAINBOW.ToString("d"));
+            break;
+            case 3: 
+                network.SendData(Network.DATA_TYPE.SETMODE, Network.LIGHT_MODE.FLASH.ToString("d"));
+            break;
         }
     }
 

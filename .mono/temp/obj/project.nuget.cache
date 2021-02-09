@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7PzBVb1txwLd9mqWxosGEHpKoZX4I6N0IHDCCvcezjvcG5EwOfuTUcffMCPW8yX2eF+XnilS1HQj0u2SrG1SHQ==",
+  "dgSpecHash": "U56fhaVoR4FhIEy+8Up6SLtENLlmcbNFjHhSsU1TCkTTZyvNtkwoh2WD6KVBdgMHD+UiHIQCbxFqszVxlMd8BA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\alice\\Documents\\Godot\\AndroidController\\AndroidController.csproj",
+  "projectFilePath": "C:\\Users\\alice\\git\\android_controller\\AndroidController.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

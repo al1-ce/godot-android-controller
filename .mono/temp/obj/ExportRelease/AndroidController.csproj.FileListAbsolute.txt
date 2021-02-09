@@ -6,3 +6,11 @@ C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportRelease\An
 C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportRelease\AndroidController.csproj.CoreCompileInputs.cache
 C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportRelease\AndroidController.dll
 C:\Users\alice\Documents\Godot\AndroidController\.mono\temp\obj\ExportRelease\AndroidController.pdb
+C:\Users\alice\git\android_controller\.mono\temp\bin\ExportRelease\AndroidController.dll
+C:\Users\alice\git\android_controller\.mono\temp\bin\ExportRelease\AndroidController.pdb
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.csprojAssemblyReference.cache
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.AssemblyInfoInputs.cache
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.AssemblyInfo.cs
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.csproj.CoreCompileInputs.cache
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.dll
+C:\Users\alice\git\android_controller\.mono\temp\obj\ExportRelease\AndroidController.pdb
