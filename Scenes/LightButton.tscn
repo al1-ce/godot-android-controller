@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Themes/ThemeUI.tres" type="Theme" id=1]
+[ext_resource path="res://Fonts/RobotoBig.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Sprites/icons.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.0627451, 0.0627451, 0.0627451, 1 )
+border_blend = true
+shadow_size = 4
+shadow_offset = Vector2( 4, 4 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.447059, 0.623529, 0.87451, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="LightButton" type="Button"]
+anchor_left = -0.00140147
+anchor_right = 0.998599
+anchor_bottom = 1.0
+margin_bottom = -724.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 1 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Light Status" type="Control" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Light Status"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = -0.159119
+margin_top = -38.0
+margin_right = 304.841
+margin_bottom = 23.0
+custom_fonts/font = ExtResource( 2 )
+text = "Kitchen"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="Panel" parent="Light Status"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 320.841
+margin_top = -22.0
+margin_right = 360.841
+margin_bottom = 18.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="Light Status"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 392.841
+margin_top = 18.0
+margin_right = 432.841
+margin_bottom = 26.0
+rect_rotation = -90.0
+custom_styles/fg = SubResource( 2 )
+custom_styles/bg = SubResource( 3 )
+value = 75.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icons" type="Control" parent="Light Status"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Light Status/Icons"]
+position = Vector2( 424.841, -22 )
+scale = Vector2( 0.164, 0.16 )
+frames = ExtResource( 3 )
+frame = 2
+centered = false
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="Light Status/Icons"]
+position = Vector2( 480.841, -22 )
+scale = Vector2( 0.164, 0.164 )
+frames = ExtResource( 3 )
+frame = 8
+centered = false
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="Light Status/Icons"]
+position = Vector2( 536.841, -22 )
+scale = Vector2( 0.164, 0.164 )
+frames = ExtResource( 3 )
+frame = 7
+centered = false
